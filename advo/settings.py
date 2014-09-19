@@ -37,10 +37,10 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'magazine',
     'tinymce',
     'ajax_select',
     'south',
-    'magazine',
     'djstripe'
 )
 
@@ -106,11 +106,12 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 )
 
 AJAX_LOOKUP_CHANNELS = {
-     'contributor' : ('magazine.lookups', 'ContributorLookup'),
-     'tag' : ('magazine.lookups', 'TagLookup'),
+    'contributor': ('magazine.lookups', 'ContributorLookup'),
+    'tag': ('magazine.lookups', 'TagLookup'),
 }
 
-STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY", "pk_test_7mkjcG8fQj3qmdhCgP92Pq4g")
+STRIPE_PUBLIC_KEY = os.environ.get("STRIPE_PUBLIC_KEY",
+                                   "pk_test_7mkjcG8fQj3qmdhCgP92Pq4g")
 
 DJSTRIPE_PLANS = {
     "monthly": {
