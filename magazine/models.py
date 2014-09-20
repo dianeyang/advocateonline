@@ -114,7 +114,8 @@ class Content(models.Model):
     def save(self, *args, **kwargs):
         super(Content, self).save(*args, **kwargs)
 
-        # Unfeature all other featured pieces of content if this one is featured
+        # Unfeature all other featured pieces of content in this issue/section
+        # if this one is featured
         if self.is_featured:
             featured = type(self).objects.filter(
                 issue=self.issue, section=self.section,
@@ -133,5 +134,5 @@ class Image(Content):
 
 
 class Article(Content):
-    related_image = models.ImageField(upload_to=upload_article_image_to,
-                                      null=True, default=None)
+    photo = models.ImageField(upload_to=upload_article_image_to,
+                              null=True, default=None)
