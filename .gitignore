@@ -3,3 +3,6 @@
 ._*
 advo/local_settings.py
 advo/media/*
+.ropeproject/*
+*/.ropeproject/*
+.DS_Store
