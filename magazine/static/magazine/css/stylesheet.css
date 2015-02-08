@@ -158,7 +158,6 @@ body{
 .search-form-links{
 	text-align: right;
 	margin-top:8px;
-	word-spacing: 5px;
 }
 .search-group{
 	float: right;
@@ -195,7 +194,8 @@ body{
 	text-align: left;
 }
 
-@media screen and (max-width: 1000px) {
+/* if the screen is 1000px and smaller */
+@media only screen and (max-width: 991px) {
     .f-t-links{
     	text-align: center;
 	}
@@ -415,6 +415,11 @@ and (max-device-width : 480px) {
   display: none !important;
 }
 
+.navbar-brand {
+	padding-left: 0px;
+	padding-right: 0px;
+	font-size: 16px;
+}
 
 /* Styles */
 }
