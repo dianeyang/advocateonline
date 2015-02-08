@@ -111,7 +111,8 @@ def sendDonation(request):
 			country=request.POST['country'],
 			zipCode=request.POST['zipCode'],
 			customerID = customer.id,
-			amount=int(request.POST['amount'])*100,
+			amount=int(request.POST['amount']),
+			comment=request.POST['comment'],
 			time = getEasternTimeZoneString()
 		)
 

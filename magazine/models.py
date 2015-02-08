@@ -108,6 +108,7 @@ class Image(Content):
 class Donation(models.Model):
 
     amount = models.IntegerField()
+    comment = models.TextField(blank=True)
     name = models.CharField(max_length=255)
     email = models.CharField(max_length=255)
     streetAddress1 = models.CharField(max_length=255)

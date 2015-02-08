@@ -26,10 +26,18 @@ class Migration(SchemaMigration):
         ))
         db.send_create_signal(u'magazine', ['Purchase'])
 
+        # Adding field 'Donation.comment'
+        db.add_column(u'magazine_donation', 'comment',
+                      self.gf('django.db.models.fields.TextField')(default='', blank=True),
+                      keep_default=False)
+
 
     def backwards(self, orm):
         # Deleting model 'Purchase'
         db.delete_table(u'magazine_purchase')
+
+        # Deleting field 'Donation.comment'
+        db.delete_column(u'magazine_donation', 'comment')
 
 
     models = {
@@ -63,6 +71,7 @@ class Migration(SchemaMigration):
             'Meta': {'object_name': 'Donation'},
             'amount': ('django.db.models.fields.IntegerField', [], {}),
             'city': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
+            'comment': ('django.db.models.fields.TextField', [], {'blank': 'True'}),
             'country': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'customerID': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
             'email': ('django.db.models.fields.CharField', [], {'max_length': '255'}),
