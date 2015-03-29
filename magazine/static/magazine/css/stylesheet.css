@@ -460,3 +460,18 @@ and (max-device-width : 480px) {
 /* Styles */
 }
 
+/* Miscellaneous */
+.btn-150th {
+	color: #000000;
+	background: none;
+	border: 2px solid #000000;
+	border-radius: 0;
+	font-family: 'Futura', sans-serif;
+}
+
+.btn-150th:hover {
+	color: #ffffff;
+	background-color: #000000;
+	border-color: #000000;
+}
+
